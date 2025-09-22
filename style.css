@@ -221,3 +221,74 @@ form button:hover {
 .contact-buttons i {
     font-size: 20px;
 }
+/* General layout */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #121212;
+    /* dark theme */
+    color: #e0e0e0;
+}
+
+/* Container */
+.container {
+    max-width: 1100px;
+    margin: auto;
+    padding: 20px;
+}
+
+/* Headings */
+h1,
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Buttons / Links */
+a.button {
+    display: inline-block;
+    background: #1e88e5;
+    color: white;
+    padding: 12px 25px;
+    margin: 10px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background 0.3s;
+}
+
+a.button:hover {
+    background: #1565c0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    .container {
+        padding: 15px;
+    }
+
+    a.button {
+        display: block;
+        /* stack buttons vertically */
+        width: 100%;
+        /* full width on mobile */
+        text-align: center;
+        margin: 10px 0;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    p {
+        font-size: 0.95rem;
+        line-height: 1.5;
+    }
+}
