@@ -176,6 +176,24 @@ body {
         padding: 11px 12px;
     }
 }
+/* Button style */
+a.button {
+    display: inline-block;
+    background: #1e88e5;
+    /* blue */
+    color: white;
+    padding: 12px 25px;
+    margin: 10px 0;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background 0.3s, transform 0.2s;
+}
+
+a.button:hover {
+    background: #1565c0;
+    transform: translateY(-2px);
+}
 
 /* Project Cards */
 .project-card {
@@ -200,6 +218,25 @@ body {
 .project-card h2 {
     color: #00aaff;
     margin-bottom: 10px;
+}
+.projects {
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.projects h2 {
+    margin-bottom: 30px;
+    /* push grid down */
+    display: block;
+    /* force it to occupy its own line */
+    font-size: 2rem;
+    color: #fff;
+}
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 20px;
 }
 
 /* Contact Form */
@@ -356,4 +393,61 @@ a.button:hover {
         font-size: 0.95rem;
         line-height: 1.5;
     }
+}
+/* Hero Section */
+.hero {
+    display: flex;
+    align-items: center;
+    /* vertical centering */
+    justify-content: center;
+    /* horizontal centering */
+    text-align: center;
+    /* center text inside */
+    min-height: 80vh;
+    /* fill most of the screen */
+    padding: 40px 20px;
+}
+
+.hero-content {
+    max-width: 700px;
+    text-align: center;
+}
+
+.hero h1 {
+    display: block;
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+}
+
+.hero p {
+    display: block;
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    color: #ccc;
+}
+.hero-content a {
+    display: inline-block;
+    margin-top: 20px;
+}
+.projects {
+    display: block !important;
+    /* stop flex/side-by-side */
+    text-align: center;
+    padding: 60px 20px;
+}
+
+.projects h2 {
+    width: 100%;
+    margin-bottom: 30px;
+    font-size: 2rem;
+    color: #fff;
+    display: block;
+    text-align: center;
+}
+
+.project-grid {
+    display: grid !important;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
 }
