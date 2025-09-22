@@ -9,17 +9,27 @@
 </head>
 
 <body>
-    <header>
-        <nav>
-            <h2 class="logo">Ajin.<span>.Dev</span></h2>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="projects.html">Projects</a></li>
-                <li><a href="about.html" class="active">About</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
+<header>
+    <nav class="nav container">
+        <a class="logo" href="index.html">Ajin.<span>.Dev</span></a>
+
+        <!-- mobile menu button -->
+        <button class="nav-toggle" aria-controls="primary-navigation" aria-expanded="false">
+            <span class="sr-only">Open menu</span>
+            <!-- simple hamburger icon -->
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+            </svg>
+        </button>
+
+        <ul id="primary-navigation" class="nav-links" role="menu">
+            <li role="none"><a role="menuitem" href="index.html">Home</a></li>
+            <li role="none"><a role="menuitem" href="projects.html">Projects</a></li>
+            <li role="none"><a role="menuitem" href="about.html">About</a></li>
+            <li role="none"><a role="menuitem" href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+</header>
 
     <section class="about">
         <h1>About Me</h1>
@@ -41,6 +51,30 @@
             communicates clearly, I’d love to collaborate with you on your next project.
         </p>
     </section>
+    <script>
+        (function () {
+            const toggle = document.querySelector('.nav-toggle');
+            const nav = document.querySelector('.nav-links');
+
+            if (!toggle || !nav) return;
+
+            toggle.addEventListener('click', () => {
+                const expanded = toggle.getAttribute('aria-expanded') === 'true';
+                toggle.setAttribute('aria-expanded', String(!expanded));
+                nav.classList.toggle('open');
+            });
+
+            // Optional: close nav when clicking outside
+            document.addEventListener('click', (e) => {
+                if (!nav.classList.contains('open')) return;
+                const insideNav = e.target.closest('.nav');
+                if (!insideNav) {
+                    nav.classList.remove('open');
+                    toggle.setAttribute('aria-expanded', 'false');
+                }
+            });
+        })();
+    </script>
 </body>
 
 </html>
